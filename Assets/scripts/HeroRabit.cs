@@ -13,13 +13,19 @@ public class HeroRabit : MonoBehaviour {
 
 
 
-	bool isBig = false;
-	bool isDead = false;
+	 bool isBig = false;
+	 bool isDead = false;
 
 	Transform heroParent = null;
 	SpriteRenderer sr = null;
 	Rigidbody2D myBody = null;
 	Animator animator = null;
+
+	public static HeroRabit lastRabit = null;
+
+	void Awake() {
+		lastRabit = this;
+	}
 	// Use this for initialization
 	void Start () {
 		sr= GetComponent<SpriteRenderer>();
@@ -62,7 +68,6 @@ public class HeroRabit : MonoBehaviour {
 
 		//Намалювати лінію (для розробника)
 		Debug.DrawLine (from, to, Color.red);
-		Debug.Log (hit.transform);
 		if(hit) {
 			isGrounded = true;
 			if(hit.transform != null && hit.transform.GetComponent<MovingPlat>() != null){
@@ -141,5 +146,13 @@ public class HeroRabit : MonoBehaviour {
 			animator.SetBool ("die", true);
 
 		isDead = true;
+	}
+
+	public bool isBigRabit () {
+		return isBig;
+	}
+
+	public bool isDeadRabit () {
+		return isDead;
 	}
 }

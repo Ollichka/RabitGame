@@ -20,3 +20,5 @@ public class ParallaxLayer : MonoBehaviour {
 		this.transform.position = my_pos;
 	}
 }
+
+

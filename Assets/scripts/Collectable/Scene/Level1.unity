@@ -641,7 +641,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eab6a2241ba647a43abb36e103989bb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 3
+  level: 1
+  coinsLabel: {fileID: 0}
+  coins: 0
+  music: {fileID: 0}
+  losePopUpPrefab: {fileID: 0}
+  settingsPrefab: {fileID: 0}
 --- !u!4 &702743071
 Transform:
   m_ObjectHideFlags: 0

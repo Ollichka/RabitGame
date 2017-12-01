@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HeroRabit : MonoBehaviour {
+
+	public AudioClip walkAudio, dieAudio;
+	public AudioSource walkAudioSource, dieAudioSource;
+
+
 	public float speed = 1;
 	bool isGrounded = false;
 	bool JumpActive = false;
@@ -25,9 +30,16 @@ public class HeroRabit : MonoBehaviour {
 
 	void Awake() {
 		lastRabit = this;
+
+		walkAudioSource = gameObject.AddComponent<AudioSource>();
+		dieAudioSource = gameObject.AddComponent<AudioSource>();
+
+		walkAudioSource.clip = walkAudio;
+		dieAudioSource.clip = dieAudio;
 	}
 	// Use this for initialization
 	void Start () {
+		
 		sr= GetComponent<SpriteRenderer>();
 		myBody = this.GetComponent<Rigidbody2D> ();
 		animator = this.GetComponent<Animator> ();
@@ -52,11 +64,14 @@ public class HeroRabit : MonoBehaviour {
 		}
 		if (value < 0) {
 			sr.flipX = true;
+			if (!walkAudioSource.isPlaying && SoundManager.Instance.isSoundOn()) walkAudioSource.Play ();
 			animator.SetBool ("run", true);
 		} else if (value > 0) {
 			sr.flipX = false;
+			if (!walkAudioSource.isPlaying && SoundManager.Instance.isSoundOn()) walkAudioSource.Play ();
 			animator.SetBool ("run", true);
 		} else {
+			if (walkAudioSource.isPlaying) walkAudioSource.Pause ();
 			animator.SetBool ("run", false);
 		}
 
@@ -145,6 +160,7 @@ public class HeroRabit : MonoBehaviour {
 		if (die!= null) 
 			animator.SetBool ("die", true);
 
+		if (SoundManager.Instance.isSoundOn()) dieAudioSource.Play ();
 		isDead = true;
 	}
 

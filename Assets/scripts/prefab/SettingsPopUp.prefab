@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4884082967899032}
   - component: {fileID: 114102578630730234}
   - component: {fileID: 114279429662034056}
-  - component: {fileID: 61479771901807648}
+  - component: {fileID: 65174503595918480}
   m_Layer: 5
   m_Name: Sound
   m_TagString: Untagged
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 4488918586580360}
   - component: {fileID: 114274221423926092}
   - component: {fileID: 114276632272884062}
-  - component: {fileID: 61560156394386896}
+  - component: {fileID: 65935272199888054}
   m_Layer: 5
   m_Name: Close
   m_TagString: Untagged
@@ -90,9 +90,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4035934540927094}
   - component: {fileID: 114790465975957034}
-  - component: {fileID: 61371320611009764}
   - component: {fileID: 114095718849898920}
   - component: {fileID: 114992932581586872}
+  - component: {fileID: 65421617782091500}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 4638594583628316}
   - component: {fileID: 114362449349594958}
   - component: {fileID: 114810155840289764}
-  - component: {fileID: 61342623683898702}
+  - component: {fileID: 65161682308025236}
   m_Layer: 5
   m_Name: Music
   m_TagString: Untagged
@@ -154,7 +154,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1163953632363300}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8662, y: 74, z: 0}
+  m_LocalPosition: {x: 241, y: 22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4035934540927094}
@@ -231,106 +231,6 @@ Transform:
   m_Father: {fileID: 4273965568531710}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61342623683898702
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1958456488771480}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 344, y: 300}
-  m_EdgeRadius: 0
---- !u!61 &61371320611009764
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1705361186735370}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 1
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 7746, y: 6520}
-  m_EdgeRadius: 0
---- !u!61 &61479771901807648
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1314332864769954}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 344, y: 300}
-  m_EdgeRadius: 0
---- !u!61 &61560156394386896
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1486993888090264}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -2.6461563, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 290.90912, y: 300}
-  m_EdgeRadius: 0
 --- !u!61 &61949052783401676
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -356,6 +256,54 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1827.5981, y: 1382}
   m_EdgeRadius: 0
+--- !u!65 &65161682308025236
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1958456488771480}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 344, y: 300, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65174503595918480
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1314332864769954}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 344, y: 300, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65421617782091500
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1705361186735370}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7746, y: 6520, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65935272199888054
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1486993888090264}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 290.90912, y: 300, z: 0}
+  m_Center: {x: -2.6461563, y: 0, z: 0}
 --- !u!114 &114095718849898920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -888,7 +836,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1705361186735370}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 643e84068a5a381429eb4426a827b741, type: 3}
+  m_Script: {fileID: 11500000, guid: e794da832ae7ed548816076cba4cbd16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playButton: {fileID: 0}

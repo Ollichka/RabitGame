@@ -58,18 +58,22 @@ public class BrownOrc : Orc {
 		base.move ();
 	}
 
-	protected override void attack() {
-		if (mode == Mode.Attack) {
-			Vector3 rabit_pos = HeroRabit.lastRabit.transform.position;
-			Vector3 my_pos = this.transform.position;
-
+	protected override void OnRabitHit(HeroRabit rabit) {
+		Debug.Log ("hit");
+		Vector3 rabit_pos = rabit.transform.position;
+		Vector3 my_pos = this.transform.position;
+		if (mode == Mode.Attack ) {
 			launchCarrot (rabit_pos.x - my_pos.x);
-			if (isRabitClose () && isRabitWin ()) {
-				mode = Mode.Die;
-				StartCoroutine (die ());
+
+			if (isRabitClose ()&&Mathf.Abs(rabit_pos.y-my_pos.y)  >1f) {
+					mode = Mode.Die;
+					StartCoroutine (die ());
+				} else {
+				speed = myspeed;
+				}
 			}
-		} else {
-			speed = myspeed;
-		}
+
 	}
+
+
 }

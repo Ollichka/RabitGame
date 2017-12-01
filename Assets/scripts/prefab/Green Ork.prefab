@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61378471707277734}
   - component: {fileID: 95156817891139274}
   - component: {fileID: 114311958269187826}
-  - component: {fileID: 68988288460694306}
+  - component: {fileID: 61382866297623226}
   m_Layer: 0
   m_Name: Green Ork
   m_TagString: Untagged
@@ -38,8 +38,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1574441811382142}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.42, y: 0.8581138, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.55, y: -0.67, z: 6.810547}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,7 +77,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05867791, y: 0.85388833}
+  m_Offset: {x: 0.00869441, y: 0.8323543}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -88,10 +88,10 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1315742, y: 1.447271}
+  m_Size: {x: 0.9968295, y: 1.3420129}
   m_EdgeRadius: 0
---- !u!68 &68988288460694306
-EdgeCollider2D:
+--- !u!61 &61382866297623226
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -102,11 +102,19 @@ EdgeCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.05237055, y: 0.90011406}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0760622, y: 1.3580275}
   m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.91320014, y: 0.91319937}
-  - {x: 0.71789956, y: 0.91319984}
 --- !u!95 &95156817891139274
 Animator:
   serializedVersion: 3
@@ -135,8 +143,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbdf9b3d066b094449c3a6b2e1e93c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  moveBY: {x: 4, y: 0, z: 0}
+  MoveBy: {x: 2, y: 0.01, z: 0}
+  attackSound: {fileID: 8300000, guid: ece9b14a232f14f48ab9a5e844cb5daf, type: 3}
+  dieSound: {fileID: 8300000, guid: 0da0a61767f664de1a8b3e03d7ca4d4e, type: 3}
+  attackSoundSource: {fileID: 0}
+  dieSoundSource: {fileID: 0}
+  myspeed: 1
 --- !u!212 &212876674462476558
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -171,7 +183,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2e843cbaf901944a8b11ef591da88f36, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2, y: 2}

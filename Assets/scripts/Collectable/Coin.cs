@@ -5,6 +5,7 @@ using UnityEngine;
 public class Coin : Collectable {
 
 	protected override void OnRabitHit(HeroRabit rabit) {
+		LevelController.current.addCoin ();
 		this.CollectedHide();
 	}
 

@@ -23,12 +23,20 @@ public class GreenOrc : Orc {
 	}
 
 	protected override void attack() {
+		
+	}
+
+
+	protected override void OnRabitHit(HeroRabit rabit) {
+		Debug.Log ("hit");
+		Vector3 rabit_pos = rabit.transform.position;
+		Vector3 my_pos = this.transform.position;
 		if (mode == Mode.Attack ) {
 			animator.SetBool ("walk", true);
 
 			if (isRabitClose ()) {
 				StartCoroutine (hitRabbit ());
-				if (isRabitWin ()) {
+				if (Mathf.Abs(rabit_pos.y-my_pos.y)  >1f) {
 					mode = Mode.Die;
 					StartCoroutine (die ());
 				} else {
@@ -40,6 +48,7 @@ public class GreenOrc : Orc {
 			animator.SetBool ("walk", true);
 			animator.SetBool ("attack", false);
 		}
+
 	}
 
 	IEnumerator killRabbit() {

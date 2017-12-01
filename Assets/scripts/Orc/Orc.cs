@@ -15,6 +15,9 @@ public class Orc : MonoBehaviour {
 	protected Rigidbody2D body = null;
 	protected SpriteRenderer sr = null;
 
+	public AudioClip attackSound, dieSound;
+	public AudioSource attackSoundSource, dieSoundSource;
+
 	public enum Mode {
 		GoToA,
 		GoToB,
@@ -38,6 +41,12 @@ public class Orc : MonoBehaviour {
 		animator = this.GetComponent<Animator>();
 		body = this.GetComponent<Rigidbody2D>();
 		sr = this.GetComponent<SpriteRenderer>();
+
+		attackSoundSource = gameObject.AddComponent<AudioSource>();
+		attackSoundSource.clip = attackSound;
+
+		dieSoundSource = gameObject.AddComponent<AudioSource>();
+		dieSoundSource.clip = dieSound;
 	}
 
 	void FixedUpdate () {
@@ -92,21 +101,24 @@ public class Orc : MonoBehaviour {
 	virtual protected bool isRabitAttack() {
 		return false;
 	}
-
-	protected bool isRabitWin() {
-		Vector3 rabit_pos = HeroRabit.lastRabit.transform.position;
-		Vector3 my_pos = this.transform.position;
-
-		return Mathf.Abs(rabit_pos.y) > Mathf.Abs(my_pos.y) && Mathf.Abs(rabit_pos.x - my_pos.x) < 1f;
+	protected virtual void OnRabitHit(HeroRabit rabit) {
 	}
+
+	void OnTriggerEnter2D(Collider2D collider) {
+		HeroRabit rabit = collider.GetComponent<HeroRabit>();
+		if(rabit != null) {
+			this.OnRabitHit (rabit);
+		}
+	}
+
 
 	virtual protected bool isRabitClose() {
 		Vector3 rabit_pos = HeroRabit.lastRabit.transform.position;
 		Vector3 my_pos = this.transform.position;
 		if (!HeroRabit.lastRabit.isBigRabit()) {
-			return Mathf.Abs(rabit_pos.x - my_pos.x) < 2f && (Mathf.Abs(rabit_pos.y) - Mathf.Abs(my_pos.y))<1.7f;
+			return Mathf.Abs(rabit_pos.x - my_pos.x) < 2f && (Mathf.Abs(rabit_pos.y - my_pos.y))<1.7f;
 		} else {
-			return Mathf.Abs(rabit_pos.x - my_pos.x) < 2f && (Mathf.Abs(rabit_pos.y) - Mathf.Abs(my_pos.y)) < 2f;
+			return Mathf.Abs(rabit_pos.x - my_pos.x) < 2f && (Mathf.Abs(rabit_pos.y -my_pos.y)) < 2f;
 		}
 	}
 
@@ -120,7 +132,9 @@ public class Orc : MonoBehaviour {
 			animator.SetBool ("attack", false);
 			animator.SetBool ("walk", false);
 
+			if (SoundManager.Instance.isSoundOn ()) this.dieSoundSource.Play ();
 			yield return new WaitForSeconds(0.8f);
+
 			Destroy(this.gameObject);
 		}
 	}

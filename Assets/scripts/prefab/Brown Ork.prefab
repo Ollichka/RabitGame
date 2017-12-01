@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1752147360400118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.48, y: 0.90788096, z: -3.084961}
+  m_LocalPosition: {x: -2.6499395, y: 0.016250134, z: -3.084961}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -118,6 +118,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveBy: {x: 3, y: 0, z: 0}
+  attackSound: {fileID: 8300000, guid: ece9b14a232f14f48ab9a5e844cb5daf, type: 3}
+  dieSound: {fileID: 8300000, guid: 0da0a61767f664de1a8b3e03d7ca4d4e, type: 3}
+  attackSoundSource: {fileID: 0}
+  dieSoundSource: {fileID: 0}
   myspeed: 1
   prefabCarrot: {fileID: 1552849335305728, guid: 0918e881013f7944785f289f3028a126,
     type: 2}

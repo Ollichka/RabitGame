@@ -26,7 +26,7 @@ public class FruitController : MonoBehaviour {
 	}
 
 	void Update() {
-		fruitsLabel.text = this.collectedFruits.Count.ToString();
+		fruitsLabel.text = (this.collectedFruits.Count).ToString();
 	}
 
 	void Awake () {

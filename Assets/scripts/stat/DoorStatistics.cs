@@ -19,11 +19,15 @@ public class DoorStatistics : MonoBehaviour {
 		if (stats.allFruitsCollected) {
 			SpriteRenderer fruitRenderer = fruit.GetComponent<SpriteRenderer>();
 			fruitRenderer.sprite = fruitFilled;
+
 		}
 
-		if (stats.allCrystalsCollected) {
+
+		if (stats.allCrystalsCollected)
+		{
 			SpriteRenderer crystalRenderer = crystal.GetComponent<SpriteRenderer>();
 			crystalRenderer.sprite = crystalFilled;
+			crystalRenderer.transform.localScale -= new Vector3 (1.31f, 1.32f, 0);
 		}
 	}
 }

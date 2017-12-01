@@ -11,22 +11,25 @@ public class Fruit : Collectable {
 	protected override void OnRabitHit(HeroRabit rabit) {
 		if (!isCollected) {
 			LevelController.current.addFruit (id);
-			this.CollectedHide ();
 		}
+			this.CollectedHide ();
+		
 	}
 
 	void Start () {
 		LevelStatistic stats = LevelStatistic.load(LevelController.current.level);
 		isCollected = stats.collectedFruits.Contains(id);
-		if (isCollected) this.CollectedHide ();
+		if (isCollected) {
+			SpriteRenderer sr = this.GetComponent<SpriteRenderer>();
+			Color tmp = sr.color;
+			tmp.a = 0.5f;
+			sr.color = tmp;
+		}
 	}
 
 	public void CollectedHide () {
 		isCollected = true;
-		SpriteRenderer sr = this.GetComponent<SpriteRenderer>();
-		Color tmp = sr.color;
-		tmp.a = 0.5f;
-		sr.color = tmp;
+		Destroy(this.gameObject);
 	}
 
 }
